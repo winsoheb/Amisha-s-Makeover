@@ -34,10 +34,10 @@ const Contact = () => {
       })
     }).catch((error) => console.error("Email API Error:", error));
 
-    // 2. Open WhatsApp immediately with pre-filled details
+    // 2. Redirect to WhatsApp immediately with pre-filled details
     const whatsappMessage = `*New Booking Inquiry 🌟*\n\n*Name:* ${formData.name}\n*Phone:* ${formData.phone}\n*Service:* ${formData.service}\n*Date:* ${formData.date}\n*Email:* ${formData.email || "N/A"}\n\n*Details:* ${formData.message || "N/A"}`;
     const whatsappUrl = `https://wa.me/918766535650?text=${encodeURIComponent(whatsappMessage)}`;
-    window.open(whatsappUrl, '_blank');
+    window.location.href = whatsappUrl;
 
     // 3. Show success state and reset form
     setSubmitted(true);
