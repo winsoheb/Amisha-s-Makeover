@@ -42,12 +42,12 @@ const Home = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
-                <a href="/contact" className="px-8 py-4 bg-dark text-white text-xs text-center tracking-[0.2em] uppercase hover:bg-gold transition-all duration-500 shadow-luxury hover:shadow-glow rounded-sm">
+                <Link to="/contact" className="px-8 py-4 bg-dark text-white text-xs text-center tracking-[0.2em] uppercase hover:bg-gold transition-all duration-500 shadow-luxury hover:shadow-glow rounded-sm">
                   Book A Date
-                </a>
-                <a href="/portfolio" className="px-8 py-4 bg-glass text-center text-dark text-xs tracking-[0.2em] uppercase hover:bg-dark hover:text-white transition-all duration-500 rounded-sm">
+                </Link>
+                <Link to="/portfolio" className="px-8 py-4 bg-glass text-center text-dark text-xs tracking-[0.2em] uppercase hover:bg-dark hover:text-white transition-all duration-500 rounded-sm">
                   Explore Portfolio
-                </a>
+                </Link>
               </div>
             </motion.div>
 

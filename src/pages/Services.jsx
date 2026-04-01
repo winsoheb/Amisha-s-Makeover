@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Check, Info } from 'lucide-react';
 
 const servicesList = [
@@ -105,9 +106,9 @@ const Services = () => {
                     ))}
                   </ul>
 
-                  <a href="/contact" className="inline-flex w-full justify-center items-center py-4 border border-dark text-dark text-xs tracking-[0.2em] font-medium uppercase hover:bg-dark hover:text-white transition-colors duration-300">
+                  <Link to="/contact" className="inline-flex w-full justify-center items-center py-4 border border-dark text-dark text-xs tracking-[0.2em] font-medium uppercase hover:bg-dark hover:text-white transition-colors duration-300">
                     Book Experience
-                  </a>
+                  </Link>
                 </motion.div>
               ))}
             </div>
@@ -124,9 +125,9 @@ const Services = () => {
           <Info className="w-12 h-12 text-gold mx-auto mb-6" />
           <h3 className="font-heading text-3xl md:text-4xl leading-tight mb-4 font-light">Custom Quotes Available</h3>
           <p className="text-gray-400 font-body mb-8 max-w-xl mx-auto leading-relaxed text-sm md:text-base">For editorial photoshoots, commercial campaigns, or luxury destination weddings, please contact us for bespoke pricing and availability.</p>
-          <a href="/contact" className="inline-block px-10 py-4 bg-gold text-dark text-xs tracking-[0.2em] uppercase font-bold hover:bg-white hover:shadow-glow transition-all duration-300">
+          <Link to="/contact" className="inline-block px-10 py-4 bg-gold text-dark text-xs tracking-[0.2em] uppercase font-bold hover:bg-white hover:shadow-glow transition-all duration-300">
             Request Custom Quote
-          </a>
+          </Link>
         </motion.div>
       </section>
       

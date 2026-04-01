@@ -61,7 +61,7 @@ const Contact = () => {
 
             <div className="space-y-10 group/list">
               {[
-                { icon: Phone, title: "Phone / WhatsApp", text: "+91 98765 43210" },
+                { icon: Phone, title: "Phone / WhatsApp", text: "+91 87665 35650" },
                 { icon: Mail, title: "Email Studio", text: "hello@amishasmakeover.com" },
                 { icon: MapPin, title: "Studio Location", text: "123 Luxury Avenue, Fashion District, New Delhi 110001" }
               ].map((item, i) => (

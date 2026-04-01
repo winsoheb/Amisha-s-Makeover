@@ -1,8 +1,9 @@
 import { MessageCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const WhatsAppButton = () => {
-  const phoneNumber = "919876543210"; 
+  const phoneNumber = "918766535650"; 
   const message = "Hello Amisha! I would like to inquire about your makeup services.";
   
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
@@ -28,9 +29,9 @@ const WhatsAppButton = () => {
 
       {/* Mobile Sticky CTA */}
       <div className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-white shadow-[0_-10px_40px_rgba(0,0,0,0.1)] p-4 flex gap-4 pr-24 border-t border-gray-100">
-         <a href="/contact" className="w-full py-3 bg-dark text-white text-center text-xs tracking-widest uppercase font-semibold active:scale-95 transition-transform rounded-sm">
+         <Link to="/contact" className="w-full py-3 bg-dark text-white text-center text-xs tracking-widest uppercase font-semibold active:scale-95 transition-transform rounded-sm">
            Book Now
-         </a>
+         </Link>
       </div>
     </>
   );
