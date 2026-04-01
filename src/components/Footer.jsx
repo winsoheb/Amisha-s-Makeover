@@ -40,9 +40,11 @@ const Footer = () => {
                 <MapPin size={18} className="mr-3 text-gold shrink-0 mt-0.5" />
                 <span>123 Luxury Avenue, Fashion District<br/>New Delhi, India 110001</span>
               </li>
-              <li className="flex items-center">
-                <Phone size={18} className="mr-3 text-gold shrink-0" />
-                <span>+91 98765 43210</span>
+              <li className="flex items-center text-gray-400 font-body text-sm hover:text-white transition-colors">
+                <span className="w-5 h-5 mr-3 flex items-center justify-center border border-gray-600 rounded-full shrink-0">
+                  <Phone size={10} className="text-gold" />
+                </span>
+                <span>+91 87665 35650</span>
               </li>
               <li className="flex items-center">
                 <Mail size={18} className="mr-3 text-gold shrink-0" />
