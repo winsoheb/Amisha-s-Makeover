@@ -13,36 +13,36 @@ const Contact = () => {
   });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     
-    try {
-      const response = await fetch("https://formsubmit.co/ajax/winsoheb@gmail.com", {
-        method: "POST",
-        headers: { 
-          "Content-Type": "application/json",
-          "Accept": "application/json"
-        },
-        body: JSON.stringify({
-          _subject: "New Booking Inquiry - Amisha's Makeover",
-          Name: formData.name,
-          Phone: formData.phone,
-          Service: formData.service,
-          Date: formData.date,
-          Email: formData.email || "Not provided",
-          Message: formData.message || "No additional message."
-        })
-      });
+    // 1. Fire background email silently
+    fetch("https://formsubmit.co/ajax/winsoheb@gmail.com", {
+      method: "POST",
+      headers: { 
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify({
+        _subject: "New Booking Inquiry - Amisha's Makeover",
+        Name: formData.name,
+        Phone: formData.phone,
+        Service: formData.service,
+        Date: formData.date,
+        Email: formData.email || "Not provided",
+        Message: formData.message || "No additional message."
+      })
+    }).catch((error) => console.error("Email API Error:", error));
 
-      if (response.ok) {
-        setSubmitted(true);
-        setFormData({ name: '', email: '', phone: '', service: 'HD Bridal Makeup', date: '', message: '' });
-        setTimeout(() => setSubmitted(false), 5000);
-      }
-    } catch (error) {
-      console.error("Form submission error:", error);
-      alert("Failed to send inquiry. Please try contacting us via WhatsApp instead.");
-    }
+    // 2. Open WhatsApp immediately with pre-filled details
+    const whatsappMessage = `*New Booking Inquiry 🌟*\n\n*Name:* ${formData.name}\n*Phone:* ${formData.phone}\n*Service:* ${formData.service}\n*Date:* ${formData.date}\n*Email:* ${formData.email || "N/A"}\n\n*Details:* ${formData.message || "N/A"}`;
+    const whatsappUrl = `https://wa.me/918766535650?text=${encodeURIComponent(whatsappMessage)}`;
+    window.open(whatsappUrl, '_blank');
+
+    // 3. Show success state and reset form
+    setSubmitted(true);
+    setFormData({ name: '', email: '', phone: '', service: 'HD Bridal Makeup', date: '', message: '' });
+    setTimeout(() => setSubmitted(false), 5000);
   };
 
   const handleChange = (e) => {
