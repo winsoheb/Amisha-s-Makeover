@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gold: #d4af37;
+  --color-gold-light: #e6c86e;
+  --color-blush: #f8d7da;
+  --color-nude: #f5e6e8;
+  --color-dark: #0a0a0a;
+  --color-dark-muted: #1a1a1a;
+  --color-gray: #666666;
+  --color-light: #fcfcfc;
+  
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+  }
+  body {
+    font-family: var(--font-body);
+    background-color: var(--color-light);
+    color: var(--color-dark);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--color-dark);
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .bg-glass {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+  }
+  
+  .bg-glass-dark {
+    background: rgba(10, 10, 10, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Smooth elegant shadows */
+  .shadow-luxury {
+    box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.08);
+  }
+  .shadow-glow {
+    box-shadow: 0 0 40px -10px rgba(212, 175, 55, 0.3);
+  }
+
+  /* Custom masonry layout base */
+  .masonry-grid {
+    column-count: 1;
+    column-gap: 1.5rem; /* 24px */
+  }
+  @media (min-width: 640px) {
+    .masonry-grid { column-count: 2; }
+  }
+  @media (min-width: 1024px) {
+    .masonry-grid { column-count: 3; }
+  }
+  .masonry-item {
+    break-inside: avoid;
+    margin-bottom: 1.5rem; /* 24px */
+  }
+}
