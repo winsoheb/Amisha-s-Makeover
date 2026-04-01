@@ -13,13 +13,36 @@ const Contact = () => {
   });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setTimeout(() => {
-      setSubmitted(true);
-      setFormData({ name: '', email: '', phone: '', service: 'Bridal Makeup', date: '', message: '' });
-      setTimeout(() => setSubmitted(false), 5000);
-    }, 1000);
+    
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/winsoheb@gmail.com", {
+        method: "POST",
+        headers: { 
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          _subject: "New Booking Inquiry - Amisha's Makeover",
+          Name: formData.name,
+          Phone: formData.phone,
+          Service: formData.service,
+          Date: formData.date,
+          Email: formData.email || "Not provided",
+          Message: formData.message || "No additional message."
+        })
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        setFormData({ name: '', email: '', phone: '', service: 'HD Bridal Makeup', date: '', message: '' });
+        setTimeout(() => setSubmitted(false), 5000);
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      alert("Failed to send inquiry. Please try contacting us via WhatsApp instead.");
+    }
   };
 
   const handleChange = (e) => {
