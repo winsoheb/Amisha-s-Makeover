@@ -7,20 +7,20 @@ const categories = ['All', 'Bridal Makeup', 'Engagement', 'Party', 'HD/Airbrush'
 
 const portfolioItems = [
   // Bridal Makeup
-  { id: 1, category: 'Bridal Makeup', img: 'https://images.pexels.com/photos/3373739/pexels-photo-3373739.jpeg?auto=compress&cs=tinysrgb&w=800' },
-  { id: 2, category: 'Bridal Makeup', img: 'https://images.pexels.com/photos/3373746/pexels-photo-3373746.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 1, category: 'Bridal Makeup', img: '/img/bridal/bridal1.jpg' },
+  { id: 2, category: 'Bridal Makeup', img: '/img/bridal/bridal2.jpg' },
   // Engagement
-  { id: 3, category: 'Engagement', img: 'https://images.pexels.com/photos/3373745/pexels-photo-3373745.jpeg?auto=compress&cs=tinysrgb&w=800' },
-  { id: 4, category: 'Engagement', img: 'https://images.pexels.com/photos/2085717/pexels-photo-2085717.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 3, category: 'Engagement', img: '/img/party/party1.png' },
+  { id: 4, category: 'Engagement', img: '/img/party/party2.png' },
   // Party
-  { id: 5, category: 'Party', img: 'https://images.pexels.com/photos/1105342/pexels-photo-1105342.jpeg?auto=compress&cs=tinysrgb&w=800' },
-  { id: 6, category: 'Party', img: 'https://images.pexels.com/photos/2085739/pexels-photo-2085739.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 5, category: 'Party', img: '/img/party/party3.png' },
+  { id: 6, category: 'Party', img: '/img/party/party4.png' },
   // HD/Airbrush
-  { id: 7, category: 'HD/Airbrush', img: 'https://images.pexels.com/photos/458766/pexels-photo-458766.jpeg?auto=compress&cs=tinysrgb&w=800' },
-  { id: 8, category: 'HD/Airbrush', img: 'https://images.pexels.com/photos/1988684/pexels-photo-1988684.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 7, category: 'HD/Airbrush', img: '/img/bridal/bridal3.png' },
+  { id: 8, category: 'HD/Airbrush', img: '/img/bridal/bridal4.png' },
   // Photoshoot 
-  { id: 9, category: 'Photoshoot', img: 'https://images.pexels.com/photos/1578875/pexels-photo-1578875.jpeg?auto=compress&cs=tinysrgb&w=800' },
-  { id: 10, category: 'Photoshoot', img: 'https://images.pexels.com/photos/2112651/pexels-photo-2112651.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 9, category: 'Photoshoot', img: '/img/photoshoot/photoshoot1.png' },
+  { id: 10, category: 'Photoshoot', img: '/img/photoshoot/photoshoot2.png' },
 ];
 
 const Portfolio = () => {

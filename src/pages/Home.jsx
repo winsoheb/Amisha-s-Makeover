@@ -1,21 +1,34 @@
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import FeaturedServices from '../components/FeaturedServices';
 import TestimonialsCarousel from '../components/TestimonialsCarousel';
+import { AnimatedBlobs } from '../components/ui/AnimatedBlobs';
+import { LipstickSVG, BrushSVG } from '../components/ui/FloatingElements';
 
 const Home = () => {
+  const { scrollY } = useScroll();
+  const heroParallax = useTransform(scrollY, [0, 1000], [0, 250]);
+  const heroOpacity = useTransform(scrollY, [0, 800], [0.8, 0]);
+
   return (
     <div className="w-full">
       {/* Premium Hero Section */}
       <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
+        
+        {/* Animated Background Blobs */}
+        <AnimatedBlobs />
+
+        <motion.div 
+          className="absolute inset-0 z-0"
+          style={{ y: heroParallax, opacity: heroOpacity, willChange: 'transform, opacity' }}
+        >
           <img 
-            src="https://images.pexels.com/photos/3373746/pexels-photo-3373746.jpeg?auto=compress&cs=tinysrgb&w=2000" 
+            src="/img/bridal/bridal2.jpg" 
             alt="Authentic Indian Bridal Makeup" 
             className="w-full h-full object-cover scale-105 opacity-80"
             loading="eager"
           />
-        </div>
+        </motion.div>
         <div className="absolute inset-0 z-0 bg-gradient-to-r from-nude/90 via-blush/80 to-white/60 backdrop-blur-[2px]"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full pt-20">
@@ -25,8 +38,12 @@ const Home = () => {
               initial={{ opacity: 0, x: -40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-              className="max-w-2xl"
+              className="max-w-2xl relative"
             >
+              <div className="absolute -top-32 -left-16 z-20 pointer-events-none hidden lg:block opacity-80">
+                <LipstickSVG className="w-24 h-48 drop-shadow-2xl" />
+              </div>
+
               <motion.div 
                 initial={{ opacity: 0, width: 0 }} 
                 animate={{ opacity: 1, width: 48 }} 
@@ -61,13 +78,18 @@ const Home = () => {
             >
               <div className="relative w-[32rem] h-[40rem] rounded-t-full overflow-hidden shadow-2xl border-4 border-white/50 bg-white ml-auto">
                  <img 
-                    src="https://images.pexels.com/photos/3373739/pexels-photo-3373739.jpeg?auto=compress&cs=tinysrgb&w=800" 
+                    src="/img/bridal/bridal1.jpg" 
                     alt="Traditional Indian Bride" 
+                    loading="lazy"
                     className="w-full h-full object-cover"
                  />
-                 <div className="absolute inset-0 bg-gradient-to-t from-dark/40 to-transparent"></div>
+                 <div className="absolute inset-0 bg-gradient-to-t from-dark/40 to-transparent pointer-events-none"></div>
               </div>
               
+              <div className="absolute -bottom-24 -right-16 z-20 pointer-events-none hidden xl:block opacity-90">
+                <BrushSVG className="w-32 h-64 drop-shadow-2xl" />
+              </div>
+
               {/* Floating Badge */}
                <motion.div 
                   initial={{ opacity: 0, y: 30 }}
@@ -100,10 +122,10 @@ const Home = () => {
             transition={{ duration: 1 }}
           >
             <div className="w-12 h-[2px] bg-gold mx-auto mb-10"></div>
-            <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl leading-[1.3] mb-12 font-light">
+            <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl leading-[1.3] mb-12 font-light text-white">
               "Makeup is not a mask that covers up your beauty; it's a weapon that helps you <span className="text-gold italic">express</span> who you are from the inside."
             </h2>
-            <p className="uppercase tracking-[0.4em] text-white/50 text-xs">- Amisha, Lead Artist</p>
+            <p className="uppercase tracking-[0.4em] text-white/70 text-xs">- Amisha, Lead Artist</p>
           </motion.div>
         </div>
       </section>
@@ -129,10 +151,10 @@ const Home = () => {
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4">
             {[
-              'https://images.pexels.com/photos/3373746/pexels-photo-3373746.jpeg?auto=compress&cs=tinysrgb&w=600',
-              'https://images.pexels.com/photos/1578875/pexels-photo-1578875.jpeg?auto=compress&cs=tinysrgb&w=600',
-              'https://images.pexels.com/photos/3373745/pexels-photo-3373745.jpeg?auto=compress&cs=tinysrgb&w=600',
-              'https://images.pexels.com/photos/458766/pexels-photo-458766.jpeg?auto=compress&cs=tinysrgb&w=600'
+              '/img/bridal/bridal2.jpg',
+              '/img/photoshoot/photoshoot1.png',
+              '/img/party/party1.png',
+              '/img/bridal/bridal3.png'
             ].map((imgUrl, i) => (
               <motion.div 
                 key={i} 

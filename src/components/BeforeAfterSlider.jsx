@@ -4,9 +4,9 @@ const BeforeAfterSlider = () => {
   const [sliderPosition, setSliderPosition] = useState(50);
   const containerRef = useRef(null);
 
-  // Authentic Makeup Transformation Using Pexels
-  const beforeImage = "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1200"; // Bare face getting ready
-  const afterImage  = "https://images.pexels.com/photos/3373739/pexels-photo-3373739.jpeg?auto=compress&cs=tinysrgb&w=1200"; // Full glam bridal
+  // Authentic Makeup Transformation
+  const beforeImage = "/img/photoshoot/photoshoot3.png"; // Bare face getting ready / example before
+  const afterImage  = "/img/bridal/bridal1.jpg"; // Full glam bridal
 
   const handleMove = (event) => {
     if (!containerRef.current) return;

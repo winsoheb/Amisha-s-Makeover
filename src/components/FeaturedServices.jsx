@@ -1,24 +1,25 @@
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import TiltCard from './ui/TiltCard';
 
 const services = [
   {
     title: 'Bridal Makeup',
     description: 'Flawless, long-lasting makeup designed specifically for your special day. HD and Airbrush options available.',
-    image: 'https://images.pexels.com/photos/3373739/pexels-photo-3373739.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: '/img/bridal/bridal1.jpg',
     delay: 0.1
   },
   {
     title: 'Party Makeup',
     description: 'Glamorous and stunning looks for engagement parties, receptions, and special events.',
-    image: 'https://images.pexels.com/photos/1105342/pexels-photo-1105342.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: '/img/party/party3.png',
     delay: 0.2
   },
   {
     title: 'Editorial & Fashion',
     description: 'High-impact, creative styling for photoshoots, brand campaigns, and fashion shows.',
-    image: 'https://images.pexels.com/photos/1578875/pexels-photo-1578875.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: '/img/photoshoot/photoshoot1.png',
     delay: 0.3
   }
 ];
@@ -66,7 +67,8 @@ const FeaturedServices = () => {
               transition={{ delay: service.delay, duration: 0.8, ease: "easeOut" }}
               className="group cursor-pointer flex flex-col h-full"
             >
-              <div className="relative overflow-hidden mb-8 rounded-sm shadow-sm hover:shadow-luxury transition-shadow duration-500 aspect-[3/4]">
+              <TiltCard className="h-full flex flex-col">
+                <div className="relative overflow-hidden mb-8 rounded-sm shadow-sm hover:shadow-luxury transition-shadow duration-500 aspect-[3/4]">
                 <img 
                   src={service.image} 
                   alt={service.title} 
@@ -85,6 +87,7 @@ const FeaturedServices = () => {
                    Explore Package <ArrowRight size={14} className="ml-2 transform group-hover:translate-x-2 transition-transform duration-300" />
                  </Link>
               </div>
+             </TiltCard>
             </motion.div>
           ))}
         </div>

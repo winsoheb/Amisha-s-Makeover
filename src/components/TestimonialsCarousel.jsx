@@ -7,19 +7,19 @@ const testimonials = [
     name: "Priya Sharma",
     role: "Bride",
     text: "Amisha is literally magical! She made me feel so beautiful on my wedding day. The makeup lasted all night through tears and dancing. Highly recommend her HD bridal package!",
-    image: "https://images.pexels.com/photos/3373739/pexels-photo-3373739.jpeg?auto=compress&cs=tinysrgb&w=200"
+    image: "/img/bridal/bridal1.jpg"
   },
   {
     name: "Ritu Verma",
     role: "Party Guest",
     text: "I booked Amisha for a family reception and she perfectly understood the minimal glam look I wanted. Her hygiene standards and luxury products are totally worth it.",
-    image: "https://images.pexels.com/photos/1105342/pexels-photo-1105342.jpeg?auto=compress&cs=tinysrgb&w=200"
+    image: "/img/party/party3.png"
   },
   {
     name: "Neha Patel",
     role: "Fashion Model",
     text: "Having worked with many artists, Amisha stands out for her professionalism and eye for detail. Her editorial looks are flawless and look amazing on camera.",
-    image: "https://images.pexels.com/photos/1578875/pexels-photo-1578875.jpeg?auto=compress&cs=tinysrgb&w=200"
+    image: "/img/photoshoot/photoshoot1.png"
   }
 ];
 

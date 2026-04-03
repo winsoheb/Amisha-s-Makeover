@@ -74,7 +74,7 @@ const About = () => {
           >
             <div className="absolute inset-0 bg-gold/20 transform -translate-x-6 translate-y-6 rounded-sm hidden md:block"></div>
             <img 
-              src="https://images.pexels.com/photos/458766/pexels-photo-458766.jpeg?auto=compress&cs=tinysrgb&w=800" 
+              src="/img/bridal/bridal3.png" 
               alt="Amisha working on a client" 
               loading="lazy"
               className="relative z-10 w-full object-cover shadow-luxury grayscale-[10%] hover:grayscale-0 transition-all duration-700 aspect-[3/4] rounded-sm"
