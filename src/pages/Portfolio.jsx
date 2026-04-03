@@ -61,12 +61,12 @@ const Portfolio = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
         
         {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-4 mb-20 sticky top-[80px] z-30 bg-white/80 backdrop-blur-md py-4">
+        <div className="flex overflow-x-auto md:flex-wrap justify-start md:justify-center gap-3 md:gap-4 mb-10 md:mb-20 md:sticky top-[80px] z-30 bg-white/90 backdrop-blur-md py-4 hide-scrollbar px-2 -mx-4 sm:mx-0 sm:px-0">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-8 py-3 rounded-full text-xs tracking-[0.2em] uppercase font-medium transition-all duration-300 ${
+              className={`whitespace-nowrap px-5 py-2 md:px-8 md:py-3 rounded-full text-[10px] md:text-xs tracking-[0.2em] uppercase font-medium transition-all duration-300 flex-shrink-0 ${
                 activeCategory === cat 
                   ? 'bg-dark text-white shadow-luxury' 
                   : 'bg-transparent text-gray-500 hover:text-dark hover:bg-nude/50'

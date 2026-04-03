@@ -53,6 +53,14 @@
     perspective: 1000px;
   }
 
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
   /* Smooth elegant shadows */
   .shadow-luxury {
     box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.08);
